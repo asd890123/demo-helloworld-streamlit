@@ -6,7 +6,7 @@ st.title("my first app")
 
 @st.cache
 def load_data():
-    df = pd.read_csv("data.csv")
+    df = pd.read_csv("crime_data_20200508.csv")
     df = df[['EVENT_TYPE', 'CREATE_TIME', 'COUNTY', 'LAT', 'LON']]
     df.columns = ['event_type', 'time', 'county', 'lat', 'lon']
     return df
