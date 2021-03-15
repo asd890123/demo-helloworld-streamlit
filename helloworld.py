@@ -4,11 +4,17 @@ import pandas as pd
 
 st.title("my first app")
 
+x = st.slider("x")
+y = x + 3
+y
+
+'''
 @st.cache
 def load_data():
     df = pd.read_csv("crime_data_20200508.csv")
-    df = df[['EVENT_TYPE', 'CREATE_TIME', 'COUNTY', 'LAT', 'LON']]
-    df.columns = ['event_type', 'time', 'county', 'lat', 'lon']
+    #df = df[['EVENT_TYPE', 'CREATE_TIME', 'COUNTY', 'LAT', 'LON']]
+    crime,locname,incidentdatetime,publicadress,agency,accuracy
+    #df.columns = ['event_type', 'time', 'county', 'lat', 'lon']
     return df
 
 df = load_data()
@@ -34,3 +40,4 @@ part_df = df[(df["event_type"]==event_type) & (df['county']==county_name)]
 st.write(f"根据你的筛选，数据包含{len(part_df)}行")
 
 st.map(part_df)
+'''
