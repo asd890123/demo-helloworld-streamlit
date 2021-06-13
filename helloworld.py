@@ -5,7 +5,7 @@ import pandas as pd
 from scipy.special import perm,comb
 
 
-st.title("Permutations and Combinations")
+st.title("Permutations and Combinations Calculation")
 
 total = st.slider('Total balls')
 
