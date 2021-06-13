@@ -2,19 +2,21 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-st.title("my first app")
-
-x = st.slider("x")
-y = 2 * x + 5
-y
+from scipy.special import perm,comb
 
 
-# Reuse this data across runs!
-'''
-read_and_cache_csv = st.cache(pd.read_csv)
+st.title("Permutations and Combinations")
 
-BUCKET = "https://streamlit-self-driving.s3-us-west-2.amazonaws.com/"
-data = read_and_cache_csv(BUCKET + "labels.csv.gz", nrows=1000)
-desired_label = st.selectbox('Filter to:', ['car', 'truck'])
-st.write(data[data.label == desired_label])
-'''
+total = st.slider('Total balls')
+
+select = st.slider('Selected balls')
+
+
+#选择排列还是组合
+problem_class=st.radio('Permutation or Combination？',('Permutation','Combination'))
+
+#输出排列数或组合数，以及所有结果
+if problem_class == 'Permutation':
+    st.write('Number of permutations is', int(perm(total,select)))
+else:
+    st.write('Number of combinations is', int(comb(total,select)))
